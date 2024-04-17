@@ -2,44 +2,66 @@
 #include"Header.h"
 
 void Board::display_board() {
-    // Draw horizontal lines
-    for (int i = 0; i < 30; i++) {
-        gotoRowCol(20, 20 + i);
-        std::cout << static_cast<char>(-37);
+    int BoardWidth = 160;
+    int BoardHeight = 80;
+    char sym{ 'x' };
+    //Draw Top Left Base
+    for (int i = 0; i < 6; i++) {
+        for (int j = 0; j < 6; j++) {
+            gotoRowCol(BoardHeight / 2 + i, (BoardWidth / 2-6) + j);
+            std::cout << char(-37);
+        }
     }
-
-    // Draw vertical lines
-    for (int i = 0; i < 30; i++) {
-        gotoRowCol(20 + i, 20);
-        std::cout << static_cast<char>(-37);
-        gotoRowCol(20 + i, 49);
-        std::cout << static_cast<char>(-37);
+    //Draw Top Right Base
+    for (int i = 0; i < 6; i++) {
+        for (int j = 0; j < 6; j++) {
+            gotoRowCol(BoardHeight / 2 + i, (BoardWidth / 2+3) + j);
+            std::cout << char(-37);
+        }
     }
-
-    // Draw horizontal lines at the bottom
-    for (int i = 0; i < 30; i++) {
-        gotoRowCol(49, 20 + i);
-        std::cout << static_cast<char>(-37);
+    //Draw Down Left Base
+    for (int i = 0; i < 6; i++) {
+        for (int j = 0; j < 6; j++) {
+            gotoRowCol((BoardHeight / 2+9) + i, (BoardWidth / 2 - 6) + j);
+            std::cout << char(-37);
+        }
     }
-
-    // Draw a small box inside the board for the goal area
-    for (int i = 0; i < 10; i++) {
-        // Top horizontal line of the box
-        gotoRowCol(24, 25 + i);
-        std::cout << static_cast<char>(-37);
-
-        // Bottom horizontal line of the box
-        gotoRowCol(27, 25 + i);
-        std::cout << static_cast<char>(-37);
-
-        // Left vertical line of the box
-        gotoRowCol(25 + i, 24);
-        std::cout << static_cast<char>(-37);
-
-        // Right vertical line of the box
-        gotoRowCol(25 + i, 29);
-        std::cout << static_cast<char>(-37);
+    //Draw Down Right Base
+    for (int i = 0; i < 6; i++) {
+        for (int j = 0; j < 6; j++) {
+            gotoRowCol((BoardHeight / 2 + 9) + i, (BoardWidth / 2 + 3) + j);
+            std::cout << char(-37);
+        }
     }
+    //Draw Top Verticle Lines
+    for (int i = 0; i < 6; i++) {
+        for (int j = 0; j < 3; j++) {
+            gotoRowCol(BoardHeight / 2+i, BoardWidth / 2 + j);
+            std::cout << sym;
+        }
+    }
+    //Draw Left Horizontal Lines
+    for (int i = 0; i < 3; i++) {
+        for (int j = 0; j < 6; j++) {
+            gotoRowCol((BoardHeight / 2 + 6) + i, (BoardWidth / 2 - 6) + j);
+            std::cout << sym;
+        }
+    }
+    //Draw Bottom Verticle Lines
+    for (int i = 0; i < 6; i++) {
+        for (int j = 0; j < 3; j++) {
+            gotoRowCol((BoardHeight / 2+9) + i, BoardWidth / 2 + j);
+            std::cout << sym;
+        }
+    }
+    //Draw Right Horizontal Lines
+    for (int i = 0; i < 3; i++) {
+        for (int j = 0; j < 6; j++) {
+            gotoRowCol((BoardHeight / 2 + 6) + i, (BoardWidth / 2-6)+9 + j);
+            std::cout << sym;
+        }
+    }
+    _getch();
 }
 
 
