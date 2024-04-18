@@ -13,11 +13,11 @@ class Player {
 	int d_track;
 	int d_position;
 	vector<Token> Tokens;
-	Token selected;
+	Token *selected;
 public:
     Player(int number_of_players, string name, int player_number, bool is_playing,
         vector<int> dye_values, bool can_select_token, int d_track, int d_position,
-        vector<Token>tokens, Token selected);
+        vector<Token>tokens, Token *selected);
     static int getNumberOfPlayers();
     static void setNumberOfPlayers(int value);
     std::string getName() const;
