@@ -26,12 +26,6 @@ Token& Token:: setIB(const bool& in_base) {
 	this->inside_base = in_base;
 	return *this;
 }
-void Token::setToken(const Token& token) {
-	setTile(token.current_tile).setTrack(token.current_track);
-	this->first_time_on_mytrack = token.first_time_on_mytrack;
-	this->inside_base = token.inside_base;
-	return 
-}
 Token& Token:: setTrack(const Track_number::Tnum& track) {
 	current_track = track;
 	return *this;

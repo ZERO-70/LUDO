@@ -1,1 +1,7 @@
-﻿  new project.vcxproj -> C:\Users\Hp\Source\Repos\LUDO\x64\Debug\new project.exe
+﻿  Board.cpp
+  Source.cpp
+C:\Users\Hp\source\repos\LUDO\new project\Source.cpp(4,13): warning C4326: return type of 'main' should be 'int' instead of 'void'
+  Token.cpp
+  Track.cpp
+  Generating Code...
+  new project.vcxproj -> C:\Users\Hp\Source\Repos\LUDO\x64\Debug\new project.exe
